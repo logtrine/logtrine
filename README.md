@@ -6,9 +6,11 @@
 
 # Quick Start
 
-The module *logtrine* is based on a simple logging interface and currently provides an implementation that supports different log message types written to STDOUT.
+> No bells and whistles, just a simple logger!
 
-Furthermore a log level can be set to show only log message types of the given level or above.
+The module `logtrine` is based on a logging interface and currently provides a single implementation , the `ConsoleLogger`, that supports writing different log message types to the standard output.
+
+Furthermore a log level can be set to show only log message types of the given level or above. In addition, each message is prefixed with the ISO time and a tag that indicates the log level of the message.
 
 ```javascript
 // Include the module and create an instance with debug level <Info>
