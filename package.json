@@ -1,0 +1,31 @@
+{
+  "name": "logtrine",
+  "version": "1.0.0",
+  "description": "A simple object-oriented logger",
+  "main": "dist/logtrine.js",
+  "files": [
+    "/src",
+    "Readme.md"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "latest"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Ronny Wegener",
+  "license": "Unlicense",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/logtrine/logtrine"
+  },
+  "keywords": [
+    "log",
+    "logger",
+    "logging",
+    "trace",
+    "debug",
+    "verbose"
+  ]
+}
