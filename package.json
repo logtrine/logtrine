@@ -1,8 +1,8 @@
 {
   "name": "logtrine",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple object-oriented logger",
-  "main": "dist/logtrine.js",
+  "main": "src/logtrine.js",
   "files": [
     "/src",
     "Readme.md"
