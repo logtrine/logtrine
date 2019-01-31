@@ -8,7 +8,7 @@
 
 > No bells and whistles, just a simple logger!
 
-The module `logtrine` is based on a logging interface and currently provides a single implementation , the `ConsoleLogger`, that supports writing different log message types to the standard output.
+The module `logtrine` is an object-oriented logger, based on an interface and currently providing a single implementation , the `ConsoleLogger`, that supports writing different log message types to the standard output.
 
 Furthermore a log level can be set to show only log message types of the given level or above. In addition, each message is prefixed with the ISO time and a tag that indicates the log level of the message.
 
