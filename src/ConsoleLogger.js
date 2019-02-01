@@ -9,8 +9,8 @@ module.exports = class ConsoleLogger extends Logger {
     /**
      *
      */
-    constructor(level) {
-        super(level);
+    constructor(level, logger) {
+        super(level, logger);
     }
 
     /**
@@ -31,6 +31,9 @@ module.exports = class ConsoleLogger extends Logger {
      */
     trace(...content) {
         this._echo('\x1b[97m', super.trace(...content));
+        if(this.logger instanceof Logger) {
+            this.logger.trace(...content);
+        }
     }
 
     /**
@@ -40,6 +43,9 @@ module.exports = class ConsoleLogger extends Logger {
      */
     debug(...content) {
         this._echo('\x1b[97m', super.debug(...content));
+        if(this.logger instanceof Logger) {
+            this.logger.debug(...content);
+        }
     }
 
     /**
@@ -49,6 +55,9 @@ module.exports = class ConsoleLogger extends Logger {
      */
     verbose(...content) {
         this._echo('\x1b[97m', super.verbose(...content));
+        if(this.logger instanceof Logger) {
+            this.logger.verbose(...content);
+        }
     }
 
     /**
@@ -58,6 +67,9 @@ module.exports = class ConsoleLogger extends Logger {
      */
     info(...content) {
         this._echo('\x1b[0m', super.info(...content));
+        if(this.logger instanceof Logger) {
+            this.logger.info(...content);
+        }
     }
 
     /**
@@ -67,6 +79,9 @@ module.exports = class ConsoleLogger extends Logger {
      */
     warn(...content) {
         this._echo('\x1b[33m', super.warn(...content));
+        if(this.logger instanceof Logger) {
+            this.logger.warn(...content);
+        }
     }
 
     /**
@@ -76,6 +91,9 @@ module.exports = class ConsoleLogger extends Logger {
      */
     error(...content) {
         this._echo('\x1b[91m', super.error(...content));
+        if(this.logger instanceof Logger) {
+            this.logger.error(...content);
+        }
     }
 
     /**
@@ -85,5 +103,8 @@ module.exports = class ConsoleLogger extends Logger {
      */
     critical(...content) {
         this._echo('\x1b[91m', super.critical(...content));
+        if(this.logger instanceof Logger) {
+            this.logger.critical(...content);
+        }
     }
 }

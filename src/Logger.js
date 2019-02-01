@@ -7,9 +7,45 @@ module.exports = class Logger {
     /**
      * Create a new basic logger instance.
      * @param {number} level Only message types equal to or above the given level will be logged (see LEVEL for predefined values)
+     * @param {Logger} logger A logger to which each meassge will be chained through
      */
-    constructor(level) {
+    constructor(level, logger) {
+        this.logger = logger || null;
         this.level = level || Logger.LEVEL.Info;
+    }
+
+    /**
+     * 
+     */
+    get level() {
+        return this._level;
+    }
+
+    /**
+     * 
+     */
+    set level(value) {
+        this._level = value;
+        if(this.logger instanceof Logger) {
+            this.logger.level = value;
+        }
+    }
+
+    /**
+     * 
+     */
+    get logger() {
+        return this._logger;
+    }
+
+    /**
+     * 
+     */
+    set logger(value) {
+        this._logger = value;
+        if(this._logger instanceof Logger) {
+            this._logger.level = this.level;
+        }
     }
 
     /**

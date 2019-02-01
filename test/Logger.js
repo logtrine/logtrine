@@ -140,4 +140,12 @@ describe('ConsoleLogger', function() {
         assert.equal(testee.error(params), undefined);
         assert.equal(testee.critical(params), undefined);
     });
+
+    it('chaining logger must always apply parent level', () => {
+        testee.level = Logger.LEVEL.All;
+        testee.logger = new Logger(Logger.LEVEL.None);
+        assert.equal(testee.logger.level, Logger.LEVEL.All);
+        testee.level = Logger.LEVEL.None;
+        assert.equal(testee.logger.level, Logger.LEVEL.None);
+    });
 });
