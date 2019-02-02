@@ -65,7 +65,8 @@ module.exports = class Logger {
      */
     static get LEVEL() {
         return {
-            All: 0,
+            // NOTE: never use 0, because it cannot be used for default assignment (0 => false)
+            All: -Infinity,
             Trace: 1,
             Debug: 2,
             Verbose: 3,
@@ -73,7 +74,7 @@ module.exports = class Logger {
             Warn: 5,
             Error: 6,
             Critical: 7,
-            None: 999
+            None: Infinity
         };
     }
 
